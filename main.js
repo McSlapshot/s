@@ -6,29 +6,17 @@ the list and checks that the current name is in the string passed in. The output
 let dog_string = "Hello Max, my name is Dog, and I have purple eyes!"
 let dog_names = ["Max","HAS","PuRple","dog"]
 
-function findWords(text, word){
-    var x = 0, y=0;
-   
-    for (i=0;i< text.length;i++)
-        {
-        if(text[i] == word[0])
-            {
-            for(j=i;j< i+word.length;j++)
-               {
-                if(text[j]==word[j-i])
-                  {
-                    y++;
-                  }
-                if (y==word.length){
-                    x++;
-                }
-            }
-            y=0;
+function findWords(dog_string, dog_names) {
+    for(let i = 0; i < dog_names.length; i++){
+        if (dog_string.includes(dog_names[i])) {
+            console.log("Matched dog_name")
+        }
+        else {
+            console.log("No Matches")
         }
     }
-   return " Matched "+ word;
 }
-console.log(findWords(dog_string, dog_names))
+findWords(dog_string, dog_names)
 //Call method here with parameters
 
 //============Exercise #2 ============//
